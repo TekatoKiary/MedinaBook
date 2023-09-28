@@ -1,0 +1,39 @@
+.title-background{
+	width: 80%;
+	margin-left:10%;
+	text-align: left;
+	border-radius: 0 0 50px 50px;
+	font-style: italic;
+}
+
+.title{
+	margin-left: 50px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	padding: 20px;
+	border: 1rem double;
+	text-align: left;
+}
+
+.authorization-buttons{
+	font-size: 25px;
+	border: 20px single;
+	border-color: #000000;
+	margin: 35px 30px 35px 0;
+}
+
+.search{
+	margin: 40px 0;
+	width: 70%;
+}
+
+.content-background{
+	width: 90%;
+	margin-left: 5%;
+	border-radius: 50px 50px 0 0;
+	margin-top: 100px;
+}
+
+.content{
+	margin: 50px 50px;
+}
