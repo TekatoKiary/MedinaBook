@@ -1,4 +1,8 @@
+from data.db import db_session
 from flask import Flask, render_template, url_for
+
+db_session.global_init("data/db/db_files/models.sqlite")
+dataBase = db_session.create_session()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret-key'
