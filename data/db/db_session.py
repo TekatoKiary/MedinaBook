@@ -4,7 +4,7 @@ import sqlalchemy.orm as orm
 from sqlalchemy.orm import Session
 import sqlalchemy.ext.declarative as dec
 
-sql_alchemy_base = dec.declarative_base()
+SqlAlchemyBase = dec.declarative_base()
 
 __factory = None
 
@@ -17,7 +17,7 @@ def global_init(db_file):
     engine = get_engine(db_file)
     __factory = orm.sessionmaker(bind=engine)
     from . import __all_models
-    sql_alchemy_base.metadata.create_all(engine)
+    SqlAlchemyBase.metadata.create_all(engine)
 
 
 def check_db_file_name(db_file):
