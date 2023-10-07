@@ -7,15 +7,15 @@ from data.db.db_session import SqlAlchemyBase
 
 
 class User(SqlAlchemyBase, UserMixin, SerializerMixin):
-    __tablename__ = 'users'
+    __tablename__ = "users"
 
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
-    surname = sqlalchemy.Column(sqlalchemy.String(collation='NOCASE'))
-    name = sqlalchemy.Column(sqlalchemy.String(collation='NOCASE'))
-    birth_date = sqlalchemy.Column(sqlalchemy.Date, default='')
-    age = sqlalchemy.Column(sqlalchemy.Integer, default='')
-    email = sqlalchemy.Column(sqlalchemy.String, unique=True, default='')
-    hashed_password = sqlalchemy.Column(sqlalchemy.String, default='')
+    surname = sqlalchemy.Column(sqlalchemy.String(collation="NOCASE"))
+    name = sqlalchemy.Column(sqlalchemy.String(collation="NOCASE"))
+    birth_date = sqlalchemy.Column(sqlalchemy.Date, default="")
+    age = sqlalchemy.Column(sqlalchemy.Integer, default="")
+    email = sqlalchemy.Column(sqlalchemy.String, unique=True, default="")
+    hashed_password = sqlalchemy.Column(sqlalchemy.String, default="")
 
     def __init__(self, surname, name, birth_date, email):
         self.surname = surname
@@ -33,5 +33,4 @@ class User(SqlAlchemyBase, UserMixin, SerializerMixin):
 
 def calculate_age(born_date):
     today = datetime.date.today()
-    return today.year - born_date.year - (
-            (today.month, today.day) < (born_date.month, born_date.day))
+    return today.year - born_date.year - ((today.month, today.day) < (born_date.month, born_date.day))

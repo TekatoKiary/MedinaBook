@@ -5,7 +5,7 @@ from data.db.db_session import SqlAlchemyBase
 
 
 class Comment(SqlAlchemyBase, UserMixin, SerializerMixin):
-    __tablename__ = 'comments'
+    __tablename__ = "comments"
 
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     patient_id = sqlalchemy.Column(sqlalchemy.Integer)
